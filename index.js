@@ -64,7 +64,7 @@
     return 0;
   } 
  */
-
+/* 
   function switchItUp(number){
     switch (number) {
       case 0: return 'Zero';
@@ -78,11 +78,45 @@
       case 8: return 'Eight';
       case 9: return 'Nine';
     };
+  } */
+
+
+
+/* function rentalCarCost(d){
+  if (d < 3) { 
+    return  d * 40;
+    } else if (d < 7) {
+      return d * 40 - 20;
+      } else {
+        return d * 40 - 50;
+      };
+};
+ */
+/* 
+function typeOfSum(a, b) {
+  console.log ('a'*'b');
+  return typeof (a * b);
+
+} */
+
+
+const long = (number) => {
+  let l = number.toString().length;
+  let digit = Array();
+  let remain = 0;
+  digit[l] = 0;
+  for (i=l; i >= 0; i--){
+    remain = (number - digit[i] * Math.pow (10, l-1)) % Math.pow (10, l-1);
+    digit[i] = (number - remain) / Math.pow (10, l-1);
+    console.log (remain);
+    console.log (digit[i]);
+    console.log (i);
   }
+  return l;
+}
 
 
 
-
-let z = switchItUp (2);
+let z = long (132);
 
 console.log (z);
