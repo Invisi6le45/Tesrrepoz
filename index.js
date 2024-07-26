@@ -141,21 +141,17 @@ const toReadable = (number) => {
         1000000: 'million'
   };
 
-  let numMidlWord = 0;
-  let k = 0;
+  let k = 0;   //* для перевода разрядов с 11-19
 
   for (i=l-1; i >= 0; i--){
     remain = numMidl % Math.pow (10, i);
     digit[i] = (numMidl-remain) / Math.pow (10, i);
     numMidl = remain;
-  
   }
 
   for (i=l-1; i >= 0; i=i-1-k) {                    //* 10.000.000 - 99.000.000
     if (i === 7) {
-    
       k = 0;
-      
       if (digit[i] === 9) { result = result + (`${digitWords[90]}`)};
       if (digit[i] === 8) { result = result + (`${digitWords[80]}`)};
       if (digit[i] === 7) { result = result + (`${digitWords[70]}`)};
@@ -179,9 +175,8 @@ const toReadable = (number) => {
         result = result + (` ${digitWords[1000000]}`)
       }
     };
+
     if (i === 6) {                    //* 1.000.000 - 9.000.000
- 
-      numMidlWord = numMidlWord + digit[i];
       if (digit[i] === 9) { result = result + (` ${digitWords[9]}`)};
       if (digit[i] === 8) { result = result + (` ${digitWords[8]}`)};
       if (digit[i] === 7) { result = result + (` ${digitWords[7]}`)};
@@ -195,7 +190,6 @@ const toReadable = (number) => {
     };
 
     if (i === 5) {                    //* 100.000
-     
       if (digit[i] === 9) { result = result + (` ${digitWords[9]}`)};
       if (digit[i] === 8) { result = result + (` ${digitWords[8]}`)};
       if (digit[i] === 7) { result = result + (` ${digitWords[7]}`)};
@@ -208,12 +202,8 @@ const toReadable = (number) => {
         result = result + (` ${digitWords[100]}`)
     };
 
-
-
     if (i === 4) {                    //* 10.000 - 99.000
-   
       k = 0;
-      
       if (digit[i] === 9) { result = result + (` ${digitWords[90]}`)};
       if (digit[i] === 8) { result = result + (` ${digitWords[80]}`)};
       if (digit[i] === 7) { result = result + (` ${digitWords[70]}`)};
@@ -237,6 +227,7 @@ const toReadable = (number) => {
         result = result + (` ${digitWords[1000]}`)
       }
     };
+
     if (i === 3) {                    //* 1.000 - 9.000
       console.log (i);
       console.log (digit[i]);
@@ -254,7 +245,6 @@ const toReadable = (number) => {
     };
 
     if (i === 2) {                    //* 999
-     
       if (digit[i] === 9) { result = result + (` ${digitWords[9]}`)};
       if (digit[i] === 8) { result = result + (` ${digitWords[8]}`)};
       if (digit[i] === 7) { result = result + (` ${digitWords[7]}`)};
@@ -268,9 +258,7 @@ const toReadable = (number) => {
     };
 
     if (i === 1) {                    //* 99
-   
        k = 0;
-       
        if (digit[i] === 9) { result = result + (` ${digitWords[90]}`)};
        if (digit[i] === 8) { result = result + (` ${digitWords[80]}`)};
        if (digit[i] === 7) { result = result + (` ${digitWords[70]}`)};
@@ -293,6 +281,7 @@ const toReadable = (number) => {
          k = 1;
        }
      };
+     
      if (i === 0) {                    //* 1 - 9
        console.log (i);
        console.log (digit[i]);
