@@ -99,7 +99,7 @@ function typeOfSum(a, b) {
 
 } */
 
-
+/* 
 const toReadable = (number) => {
   let result = '';
   let l = number.toString().length;
@@ -299,8 +299,32 @@ const toReadable = (number) => {
   }
 
   console.log (result);
-  return result;
-}
-let z = toReadable (909895);
+  return result; */
+/* } */
 
-/* console.log (z); */
+
+reverse = (number)  => {
+  console.log (number);
+  let reverNumber = Array;
+  let result = '';
+  let midleNumber;
+  let negativeNumber;
+
+  if (number < 0) {
+    negativeNumber = -1;
+  } else {
+    negativeNumber = 1;
+    };
+
+  midleNumber = Math.abs (number)
+  let numberLeter = midleNumber.toString();  
+  for ( i = numberLeter.length; i > 0; i--) {
+    reverNumber[i-1] = (`${numberLeter[i-1]}`);
+    result = result + reverNumber[i-1]
+  }
+  return Number(result) * negativeNumber;
+}
+
+let z = reverse (-45689879);
+
+console.log (z);
