@@ -352,7 +352,7 @@ const toReadable = (number) => {
 
 
  */
-
+/* 
 
   function dataReverse(data) {
     let  l = data.length;
@@ -379,8 +379,27 @@ const toReadable = (number) => {
     }
     console.log (data);
     return data
+  } */
+
+function towelSort (matrix) {
+  for (let i = 0; i <= matrix.length; i++) {
+    for (let j = 0; j <= matrix[i].length; j++) {
+      console.log (matrix[i][j]);
+    }
   }
 
-let z = dataReverse[1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
 
-console.log (z);
+  return matrix;
+}
+
+
+let matr = [
+  [ 1, 2, 3 ],
+  [ 4, 5, 6 ],
+  [ 7, 8, 9 ],
+  ];
+
+
+let z = towelSort (matr);
+    
+console.log (matr);
