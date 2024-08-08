@@ -302,7 +302,7 @@ const toReadable = (number) => {
   return result; */
 /* } */
 
-
+/* 
 reverse = (number)  => {
   console.log (number);
   let reverNumber = Array;
@@ -323,8 +323,110 @@ reverse = (number)  => {
     result = result + reverNumber[i-1]
   }
   return Number(result) * negativeNumber;
+} */
+
+
+  /* function add(num1, num2) {
+    let l = 0;
+    let remNum1 = 0;
+    let remNum2 = 0;
+    let resultStr = '';
+    const arrNum1 = {};
+    const arrNum2 = {};
+    const result = {};
+
+    if  (num1.toString().length >= num2.toString().length) {
+      l = num1.toString().length;
+      } else {
+      l = num2.toString().length;
+      }
+     for (i = (l-1); i >= 0; i--) {
+      remNum1 = num1 % Math.pow(10, i);
+      remNum2 = num2 % Math.pow(10, i);
+      arrNum1[i] = (num1 - remNum1) / Math.pow(10, i);
+      arrNum2[i] = (num2 - remNum2) / Math.pow(10, i);
+      num1 = remNum1;
+      num2 = remNum2;
+      result[i] = arrNum1[i] + arrNum2[i];
+      resultStr = resultStr + result[i].toString();
+     }
+    return Number(resultStr);
+  } */
+
+/* 
+    const question = (array) => {
+      for (let key in array) {
+        if (typeof array[key] === 'object') {
+          for (let arrayKey in array[key]) {
+            array[key].usersAnswer = null;
+          }  
+        }
+        console.log (array[key]);
+      }
+      return array
+    }
+
+let questions = [{
+    question: "What's the currency of the USA?",
+    choices: ["US dollar", "Ruble", "Horses", "Gold"],
+    corAnswer: 0
+}, {
+    question: "Where was the American Declaration of Independence signed?",
+    choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+    corAnswer: 0
+}];;
+
+ */
+
+
+
+
+
+/* 
+function dataReverse(data){
+  const result = [];
+  for (let key in array) {
+    result[array[key][0]] = array[key][1];
+  }
+  console.log (result);
+  return result;
+}
+ */
+
+
+function dataReverse(data) {
+  let  l = data.length;
+  let baitStr = '';  
+  let baitNumber = l / 8;
+  let baitArr = {};
+  for (let i = 0; i <= (baitNumber -1); i++) {
+    for (let j = 0; j <= 7; j++){
+      baitStr = baitStr + data[0];
+      data.shift();
+    }
+    baitArr[i] = baitStr;
+    baitStr = '';
+  }
+  console.log (data);
+  console.log (baitArr);
+
+  for (let i = (baitNumber -1); i >= 0; i--) {
+    console.log (baitArr[i]);
+    baitStr = baitArr[i];
+    for (let j  = 0; j <= 7; j++) {
+      data.push( Number(baitStr[j]));
+    }
+  }
+  console.log (data);
+  return data
 }
 
-let z = reverse (-45689879);
 
-console.log (z);
+
+
+const arr = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
+
+let z = dataReverse(arr);
+ 
+
+
