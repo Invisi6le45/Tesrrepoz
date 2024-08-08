@@ -355,13 +355,30 @@ const toReadable = (number) => {
 
 
   function dataReverse(data) {
-    console.log (data);
-    const revArr = {};
-    for (let key in data) {
-      revArr[key] = data[key];
+    let  l = data.length;
+    let baitStr = '';  
+    let baitNumber = l / 8;
+    let baitArr = {};
+    for (let i = 0; i <= (baitNumber -1); i++) {
+      for (let j = 0; j <= 7; j++){
+        baitStr = baitStr + data[0];
+        data.shift();
+      }
+      baitArr[i] = baitStr;
+      baitStr = '';
     }
-    console.log (revArr)
-    return revArr
+    console.log (data);
+    console.log (baitArr);
+  
+    for (let i = (baitNumber -1); i >= 0; i--) {
+      console.log (baitArr[i]);
+      baitStr = baitArr[i];
+      for (let j  = 0; j <= 7; j++) {
+        data.push( Number(baitStr[j]));
+      }
+    }
+    console.log (data);
+    return data
   }
 
 let z = dataReverse[1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
