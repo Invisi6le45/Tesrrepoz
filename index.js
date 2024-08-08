@@ -303,7 +303,7 @@ const toReadable = (number) => {
 /* } */
 
 
-reverse = (number)  => {
+/* reverse = (number)  => {
   console.log (number);
   let reverNumber = Array;
   let result = '';
@@ -323,8 +323,47 @@ reverse = (number)  => {
     result = result + reverNumber[i-1]
   }
   return Number(result) * negativeNumber;
-}
+} */
 
-let z = reverse (-45689879);
+
+/*   function add(num1, num2) {
+    const num1arr = {};
+    const num2arr = {};
+    const rem = 0;
+    const a = 0;
+    
+    
+
+
+    for ( i = (num1.toString().length - 1); i >= 0; i--) {
+      num1  = num1 - a; 
+      rem = num1 % Math.pow(10 , i);
+      num1arr[i] = (num1arr - rem) / Math.pow(10,i);
+      a = i * Math.pow(10 , i);
+      
+    }
+      console.log ('Num1:', num1);
+    
+      console.log ('i:', i);
+      console.log (num1arr[i]);
+      console.log (a);
+    return num1 + num2;
+  }
+
+
+ */
+
+
+  function dataReverse(data) {
+    console.log (data);
+    const revArr = {};
+    for (let key in data) {
+      revArr[key] = data[key];
+    }
+    console.log (revArr)
+    return revArr
+  }
+
+let z = dataReverse[1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0];
 
 console.log (z);
