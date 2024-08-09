@@ -382,14 +382,15 @@ const toReadable = (number) => {
   } */
 
 function towelSort (matrix) {
-  for (let i = 0; i <= matrix.length; i++) {
-    for (let j = 0; j <= matrix[i].length; j++) {
-      console.log (matrix[i][j]);
+  let result = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      result.push(matrix[i][j])
     }
   }
 
 
-  return matrix;
+  return result;
 }
 
 
@@ -402,4 +403,4 @@ let matr = [
 
 let z = towelSort (matr);
     
-console.log (matr);
+console.log (z);
