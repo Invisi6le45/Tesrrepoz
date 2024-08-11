@@ -380,7 +380,7 @@ const toReadable = (number) => {
     console.log (data);
     return data
   } */
-
+/* 
 function towelSort (matrix) {
   let result = [];
   for (let i = 0; i < matrix.length; i++) {
@@ -399,8 +399,64 @@ let matr = [
   [ 4, 5, 6 ],
   [ 7, 8, 9 ],
   ];
+ */
+/* 
+let arrData = [
+    ["red", "energy"],
+    ["yellow", "creativity"],
+    ["brown" , "friendly"],
+    ["green", "growth"],
+    ["white", "goodness"],
+    ["blue", "tranquility"]]
 
 
-let z = towelSort (matr);
+  function colourAssociation(array){
+    let index = '';
+    let prop = '';
+    let result = [];
+    let k = 0;
+
+    for (let i in array) {
+      result[i] = {};
+      for (let j = 0; j < array[i].length; j++) {
+        if (k === 0) {
+          index = array[i][j];
+          console.log (index);      
+          k = k + 1;
+        } else {
+          prop = array[i][j];
+          console.log (prop);
+          result[i][index] = prop;
+          k = 0;
+        }
+      }
+    }
+
+    console.log (result)
+  } */
+
+  const objA = { a: 10, b: 20, c: 30 }
+  const objB = { a: 3, c: 6, d: 3 }
+  const objC = { a: 5, d: 11, e: 8 }
+  const objD = { c: 3 }
+
+
+  function combine() {
+
+    const array1 = arguments[0];
+    const array2=  arguments[1]; 
+
+
+
+    console.log (array1);
+    console.log (array2);
+  }
+
+
+
+
+
+
+
+let z = combine (objA, objB);
     
-console.log (z);
