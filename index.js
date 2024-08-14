@@ -434,7 +434,7 @@ let arrData = [
 
     console.log (result)
   } */
-
+/* 
   const objA = { a: 10, b: 20, c: 30 }
   const objB = { a: 3, c: 6, d: 3 }
   const objC = { a: 5, d: 11, e: 8 }
@@ -466,7 +466,34 @@ function toBinary(n){
   n = Number(a);
   return n;
 }
-  let z = toBinary (5);
+  let z = toBinary (5); */
+
+  function nbDig(n, d) {
+  let counter = 0;
+
+  for (let i = 0; i <= n; i++){
+    let multNumber = i*i;
+    let multNumberStr = '';
+
+    multNumberStr = multNumber.toString();
+
+    for (let j = 0; j < multNumberStr.length; j++) {
+      if (multNumberStr[j] === d.toString()) {
+
+        console.log (`Длинна числа = ${multNumberStr.length}`);
+        counter = counter + 1;
+      }
+
+      console.log (`Число цифр ${d} в числе ${multNumber} = ${counter}`);
+    }
+  }
+  return counter;
+}
+
+
+
+let z = nbDig(5750, 0);
+
 
   console.log (z);
 
