@@ -468,7 +468,7 @@ function toBinary(n){
 }
   let z = toBinary (5); */
 
-  function nbDig(n, d) {
+  /* function nbDig(n, d) {
   let counter = 0;
 
   for (let i = 0; i <= n; i++){
@@ -488,11 +488,31 @@ function toBinary(n){
     }
   }
   return counter;
+} */
+
+
+const arr1 = [1,2,3,4,5,6,7,8,9,10,11];
+const arr2 = [1,2,3,4,5,6,8,9,10,11];
+
+function findMissing(arr1, arr2) {
+  let result = 0;
+  const resultArr = arr1 + arr2;
+  arr1.forEach(element => {
+    if (arr2.includes(element) === false) {
+      result = element;
+    }
+  });
+
+  console.log (resultArr)
+   
+
+  return resultArr
 }
 
 
 
-let z = nbDig(5750, 0);
+
+let z = findMissing(arr1, arr2);
 
 
   console.log (z);
