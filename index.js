@@ -379,8 +379,8 @@ const toReadable = (number) => {
     }
     console.log (data);
     return data
-  } */
-/* 
+  } 
+
 function towelSort (matrix) {
   let result = [];
   for (let i = 0; i < matrix.length; i++) {
@@ -399,8 +399,8 @@ let matr = [
   [ 4, 5, 6 ],
   [ 7, 8, 9 ],
   ];
- */
-/* 
+ 
+
 let arrData = [
     ["red", "energy"],
     ["yellow", "creativity"],
@@ -433,32 +433,37 @@ let arrData = [
     }
 
     console.log (result)
-  } */
-/* 
-  const objA = { a: 10, b: 20, c: 30 }
-  const objB = { a: 3, c: 6, d: 3 }
-  const objC = { a: 5, d: 11, e: 8 }
-  const objD = { c: 3 }
-
-
-  function combine() {
-
-    const array1 = arguments[0];
-    const array2=  arguments[1]; 
+  } 
 
 
 
-    console.log (array1);
-    console.log (array2);
-  }
+function combine() {
+  let arrKey = [];
+  let sumArr = {};
+  const result = {};
 
+  if (arguments.length !== 0) {
+    
+    for (let i = 0; i < arguments.length; i++ ) {
+      sumArr = arguments[i];
+      console.log (sumArr);
 
-
-
-
-
-
-let z = combine (objA, objB);
+      arrKey = Object.keys(sumArr);
+      for (let j in arrKey) {
+        if (((arrKey[j] in sumArr) === true) && !(arrKey[j] in result)){
+          result[arrKey[j]] = sumArr[arrKey[j]];
+              
+        } else {
+          result[arrKey[j]] = result[arrKey[j]] + sumArr[arrKey[j]];
+        }
+      } 
+      
+    }
+   
+  } else {return sumArr}
+  console.log (result);
+  return result 
+}
    
 function toBinary(n){
   let a = '';
@@ -466,9 +471,9 @@ function toBinary(n){
   n = Number(a);
   return n;
 }
-  let z = toBinary (5); */
+  let z = toBinary (5);
 
-  /* function nbDig(n, d) {
+  function nbDig(n, d) {
   let counter = 0;
 
   for (let i = 0; i <= n; i++){
