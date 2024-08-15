@@ -503,17 +503,57 @@ function findMissing(arr1, arr2) {
   let result = [];
   let resultX = 0;
 
-  result = arr1.reduce((acc, value, item) => {
+  const arrMissing = arr1.reduce((acc, value, item) => {
     console.log (value);
-    console.log (arr2.includes(value));
-    if (arr2.includes(value) === false) ||  {   // Дописать здеся
-      console.log ('Tvf = ' + value);
-      resultX = value;
-      return resultX;
-      }
-  }, 0
-)
+    if (arr2.includes(value)) {
+      acc.inputNumber = [...acc.inputNumber, value];
 
+
+
+      acc.counterNumber[Number(value)] = +value;
+    }
+
+    console.log (acc.inputNumber);
+    console.log (acc.counterNumber);
+    return acc;
+  }, {
+    inputNumber: [],
+    counterNumber: [],
+  })
+
+
+
+
+
+
+
+
+
+
+  /* const arrMissing = arr1.reduce((acc, value, item) => {
+    console.log ('Аккумулятор =' + acc);
+    console.log ('Значение =' + value);
+    console.log ('Свойство =' + item);
+    console.log (arr2.includes(value));
+    let arrMiss = [];
+    let lose = 0;
+
+     if (arr2.includes(value)) {
+      arrMiss = [...acc.arrFind, value];
+      console.log (arrMiss)
+    } else {
+      lose = value;
+    }
+   
+    return {
+       arrFind:  arrMiss, 
+       lose,
+    }
+      
+  }, {
+    arrFind: [],
+  })
+ */
 /* 
 
   arr1.forEach(element => {
@@ -522,8 +562,8 @@ function findMissing(arr1, arr2) {
   
   console.log (`Потеоренная цифра = `+ result);
     */
-
-  return resultX;
+ 
+ 
 }
 
 
@@ -532,5 +572,5 @@ function findMissing(arr1, arr2) {
 let z = findMissing(arr1, arr2);
 
 
-  console.log (z);
+  /* console.log (z); */
 
