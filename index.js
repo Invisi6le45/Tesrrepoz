@@ -496,22 +496,34 @@ function toBinary(n){
 } */
 
 
-const arr1 = [1,2,3,4,5,6,7,8,9,10,11];
-const arr2 = [1,2,3,4,5,6,8,9,10,11];
+const arr1 = [4, 3, 3, 61, 8, 8];
+const arr2 = [8, 61, 8, 3, 4];
 
 function findMissing(arr1, arr2) {
-  let result = 0;
-  const resultArr = arr1 + arr2;
+  let result = [];
+  let resultX = 0;
+
+  result = arr1.reduce((acc, value, item) => {
+    console.log (value);
+    console.log (arr2.includes(value));
+    if (arr2.includes(value) === false) ||  {   // Дописать здеся
+      console.log ('Tvf = ' + value);
+      resultX = value;
+      return resultX;
+      }
+  }, 0
+)
+
+/* 
+
   arr1.forEach(element => {
-    if (arr2.includes(element) === false) {
-      result = element;
-    }
+    
   });
+  
+  console.log (`Потеоренная цифра = `+ result);
+    */
 
-  console.log (resultArr)
-   
-
-  return resultArr
+  return resultX;
 }
 
 
