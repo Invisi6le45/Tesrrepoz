@@ -500,70 +500,29 @@ const arr1 = [4, 3, 3, 61, 8, 8];
 const arr2 = [8, 61, 8, 3, 4];
 
 function findMissing(arr1, arr2) {
-  let result = [];
-  let resultX = 0;
+  let result = 0;
+  let count = [...arr2];
+  let item = 0;
 
-  const arrMissing = arr1.reduce((acc, value, item) => {
-    console.log (value);
-    if (arr2.includes(value)) {
-      acc.inputNumber = [...acc.inputNumber, value];
-
-
-
-      acc.counterNumber[Number(value)] = +value;
-    }
-
-    console.log (acc.inputNumber);
-    console.log (acc.counterNumber);
-    return acc;
-  }, {
-    inputNumber: [],
-    counterNumber: [],
-  })
-
-
-
-
-
-
-
-
-
-
-  /* const arrMissing = arr1.reduce((acc, value, item) => {
-    console.log ('Аккумулятор =' + acc);
-    console.log ('Значение =' + value);
-    console.log ('Свойство =' + item);
-    console.log (arr2.includes(value));
-    let arrMiss = [];
-    let lose = 0;
-
-     if (arr2.includes(value)) {
-      arrMiss = [...acc.arrFind, value];
-      console.log (arrMiss)
-    } else {
-      lose = value;
-    }
-   
-    return {
-       arrFind:  arrMiss, 
-       lose,
-    }
-      
-  }, {
-    arrFind: [],
-  })
- */
-/* 
-
-  arr1.forEach(element => {
+  const arrMissing = arr1.reduce((acc, value) => {
     
-  });
-  
-  console.log (`Потеоренная цифра = `+ result);
-    */
- 
- 
+    if (count.includes(value)) {
+
+      item = count.indexOf(value);
+
+
+      /* console.log ('Найденая/удалённая цифра ' + value);   */
+      count.splice(item,1);
+
+      /* console.log ('Остаток массива после поиска :' + count); */
+    } else {
+      acc = value
+      /* console.log ('Не найдена цифра :' + acc); */
+
+    }
+    return result = acc;
+  }, 0)
+  return result;
 }
 
 
@@ -572,5 +531,5 @@ function findMissing(arr1, arr2) {
 let z = findMissing(arr1, arr2);
 
 
-  /* console.log (z); */
+  console.log (z);
 
