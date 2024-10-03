@@ -493,7 +493,7 @@ function toBinary(n){
     }
   }
   return counter;
-} */
+} 
 
 
 const arr1 = [4, 3, 3, 61, 8, 8];
@@ -511,24 +511,158 @@ function findMissing(arr1, arr2) {
       item = count.indexOf(value);
 
 
-      /* console.log ('Найденая/удалённая цифра ' + value);   */
+      console.log ('Найденая/удалённая цифра ' + value);   
       count.splice(item,1);
 
-      /* console.log ('Остаток массива после поиска :' + count); */
+      console.log ('Остаток массива после поиска :' + count);
     } else {
       acc = value
-      /* console.log ('Не найдена цифра :' + acc); */
+      console.log ('Не найдена цифра :' + acc);
 
     }
     return result = acc;
   }, 0)
   return result;
-}
+}*/
 
 
 
 
-let z = findMissing(arr1, arr2);
+
+
+
+/* 
+  const arr1 = Object.values(diary1);
+  const arr2 = Object.values(diary2);
+  const arr3 = Object.values(diary3);
+ 
+  let firstSun = 0;
+  let secondSun = 0;
+  let thirdSon = 0;
+
+
+
+
+
+
+
+  for (let i = 0; i < arr1.length; i++) {
+    let grades = [arr1[i], arr2[i], arr3[i]];
+    let maxGrades = Math.max(arr1[i], arr2[i], arr3[i]);
+    let sun = grades.indexOf(maxGrades,0);
+    if (sun === 0 || sun === -1) {
+      firstSun++;
+    } else if (sun === 1) {
+      secondSun++;
+    } else {
+      thirdSon++;
+    }
+  };
+
+  let sunText = '';
+  let resultText = '';
+
+  if (firstSun > secondSun && firstSun > thirdSon) {
+    sunText = 'third';
+  } else if (secondSun > firstSun && secondSun > thirdSon) {
+    sunText = 'second';
+  } else if (thirdSon > firstSun && thirdSon > secondSun) {
+    sunText = 'first';
+  } else {
+    sunText = 'third';
+  };
+
+  resultText = `I need to buy a bicycle for my ${sunText} son.`;
+
+  console.log (resultText);
+
+  return resultText; */
+
+
+
+  const ageTable = {
+    'firstSonAge': 14,
+    'secondSonAge': 9,
+    'thirdSonAge': 8
+  }
+  
+  
+  
+  
+function whoseBicycle(diary1, diary2, diary3) {
+  
+const ratingsArray1 = Object.values(diary1);   
+const ratingsArray2 = Object.values(diary2);
+const ratingsArray3 = Object.values(diary3);
+
+const ageSun = Object.values(ageTable);
+
+let ratingHaith1 = 0;
+let ratingHaith2 = 0;
+let ratingHaith3 = 0;
+
+const textSun1 = 'first';
+const textSun2 = 'second';
+const textSun3 = 'third';
+
+for (i = 0; i < ratingsArray1.length; i++) {
+
+  let a = ratingsArray1[i];
+  let b = ratingsArray2[i];
+  let c = ratingsArray3[i];
+
+
+  if (a > b && a > c) {
+    ratingHaith1++;
+  } else if ( (b > a && b > c) || (b > c && b === a)){
+    ratingHaith2++;
+  } else if ((c > a && c > b) || (c > a && c === b) || (a === b && b === c)){
+    ratingHaith3++;
+  }
+}  
+
+
+
+if (ratingHaith1 > ratingHaith2)
+
+
+
+
+
+
+
+
+
+console.log (`Количество высших оценок 1го сына = ${ratingHaith1}`);
+console.log (`Количество высших оценок 2го сына = ${ratingHaith2}`);
+console.log (`Количество высших оценок 3го сына = ${ratingHaith3}`);
+};
+  
+
+
+
+let z = whoseBicycle(
+  {
+  'algebra': 10,
+  'history': 7,
+  'physics': 8,
+  'geography': 9,
+  'chemistry': 10
+},
+{
+  'algebra': 8,
+  'history': 7,
+  'physics': 8,
+  'geography': 9,
+  'chemistry': 10
+},
+{
+  'algebra': 6,
+  'history': 5,
+  'physics': 5,
+  'geography': 9,
+  'chemistry': 10
+});
 
 
   console.log (z);
