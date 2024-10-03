@@ -576,66 +576,190 @@ function findMissing(arr1, arr2) {
 
   console.log (resultText);
 
-  return resultText; */
+  return resultText; 
+  
+  /*function maxTriSum(numbers){
+  let result = 0;
+
+   numbers.sort(function (a, b) {
+  console.log(`a=${a}`);
+  console.log(`b=${b}`);
+    return a - b;
+  });
+
+  console.log (numbers);
+  const rezArray = [];
+
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    if (rezArray.includes(numbers[i], 0) === false) {
+      rezArray.push(numbers[i]); 
+    }  
+  }
 
 
+console.log (rezArray);  
+
+
+
+
+  for (let i = rezArray.length - 1; i >= rezArray.length - 3; i--) {
+
+    result = result + rezArray[i];
+  }
+  return result
+ } 
 
   const ageTable = {
     'firstSonAge': 14,
     'secondSonAge': 9,
     'thirdSonAge': 8
+  };
+
+function whoseBicycle(diary1, diary2, diary3) {
+
+  const arrGrades1 = Object.values(diary1);
+  const arrGrades2 = Object.values(diary2);
+  const arrGrades3 = Object.values(diary3);
+ 
+  let firstSun = 0;
+  let secondSun = 0;
+  let thirdSon = 0;
+
+
+  for (let i = 0; i < arrGrades1.length; i++) {
+    let grades = [arrGrades1[i], arrGrades2[i], arrGrades3[i]];
+    let maxGrades = Math.max(arrGrades1[i], arrGrades2[i], arrGrades3[i]);
+    let sun = grades.indexOf(maxGrades,0);
+
+    if (sun === 0) {
+      firstSun++;
+    } else if (sun === 1) {
+      secondSun++;
+    } else if (sun === 2) {
+      thirdSon++;
+    }
+  };
+
+  
+  console.log (`Лучших оценок у третьего сына = ${firstSun}`);
+  console.log (`Лучших оценок у второго сына = ${secondSun}`);
+  console.log (`Лучших оценок у первого сына = ${thirdSon}`);
+
+  let sunText = '';
+  let resultText = '';
+
+  if (firstSun > secondSun && firstSun > thirdSon) {
+    sunText = 'third';
+  } else if (secondSun > firstSun && secondSun > thirdSon) {
+    sunText = 'second';
+  } else if (thirdSon > firstSun && thirdSon > secondSun) {
+    sunText = 'first';
+  } else {
+    sunText = 'third';
+  };
+
+  resultText = `I need to buy a bicycle for my ${sunText} son.`;
+
+  console.log (resultText);
+
+  return resultText;
+};
+
+
+
+
+ let z = whoseBicycle (
+  {
+    'algebra': 6,
+    'history': 7,
+    'physics': 8,
+    'geography': 9,
+    'chemistry': 10
+  },
+  {
+    'algebra': 8,
+    'history': 7,
+    'physics': 8,
+    'geography': 9,
+    'chemistry': 10
+  },
+  {
+    'algebra': 6,
+    'history': 5,
+    'physics': 5,
+    'geography': 9,
+    'chemistry': 10
   }
+);
+
+
+console.log (`Результат выполнения функции = ${z}`);
   
   
   
   
+  
+  
+  
+  
+  
+  
+  
+
+
+
 function whoseBicycle(diary1, diary2, diary3) {
   
-const ratingsArray1 = Object.values(diary1);   
-const ratingsArray2 = Object.values(diary2);
-const ratingsArray3 = Object.values(diary3);
+  const ratingsArray1 = Object.values(diary1);   
+  const ratingsArray2 = Object.values(diary2);
+  const ratingsArray3 = Object.values(diary3);
 
-const ageSun = Object.values(ageTable);
+  console.log (`Оценки у первого сына = ${ratingsArray1}`);
+  console.log (`Оценки у второго сына = ${ratingsArray2}`);
+  console.log (`Оценки у третьего сына = ${ratingsArray3}`);  
+  
+  
+  let a = 0;
+  let b = 0;
+  let c = 0;
 
-let ratingHaith1 = 0;
-let ratingHaith2 = 0;
-let ratingHaith3 = 0;
+  const textSun1 = 'first';
+  const textSun2 = 'second';
+  const textSun3 = 'third';
 
-const textSun1 = 'first';
-const textSun2 = 'second';
-const textSun3 = 'third';
+  let sunText = '';
+  let resultText = '';
 
-for (i = 0; i < ratingsArray1.length; i++) {
 
-  let a = ratingsArray1[i];
-  let b = ratingsArray2[i];
-  let c = ratingsArray3[i];
+  function sumRaiting (arr) {
+    let sumArr = 0;
+    for (let i = 0; i < arr.length; i++) {
+      sumArr = sumArr + arr[i];
+    }
+    return sumArr;
+  }
 
+  a = sumRaiting(ratingsArray1);
+  b = sumRaiting(ratingsArray2);
+  c = sumRaiting(ratingsArray3);
+  
+  console.log (`Сумма оценок у первого сына = ${a}`);
+  console.log (`Сумма оценок у второго сына = ${b}`);
+  console.log (`Сумма оценок у третьего сына = ${c}`);
+  
 
   if (a > b && a > c) {
-    ratingHaith1++;
+    sunText = 'first';
   } else if ( (b > a && b > c) || (b > c && b === a)){
-    ratingHaith2++;
-  } else if ((c > a && c > b) || (c > a && c === b) || (a === b && b === c)){
-    ratingHaith3++;
+    sunText = 'second';
+  } else if ((c > a && c > b) || (c > a && c === b) || (c > b && c === a) || (c === b && c === a)){
+    sunText = 'third';
   }
-}  
+
+  resultText = `I need to buy a bicycle for my ${sunText} son.`;
 
 
-
-if (ratingHaith1 > ratingHaith2)
-
-
-
-
-
-
-
-
-
-console.log (`Количество высших оценок 1го сына = ${ratingHaith1}`);
-console.log (`Количество высших оценок 2го сына = ${ratingHaith2}`);
-console.log (`Количество высших оценок 3го сына = ${ratingHaith3}`);
+  return resultText;
 };
   
 
@@ -643,7 +767,7 @@ console.log (`Количество высших оценок 3го сына = ${
 
 let z = whoseBicycle(
   {
-  'algebra': 10,
+  'algebra': 6,
   'history': 7,
   'physics': 8,
   'geography': 9,
@@ -663,6 +787,74 @@ let z = whoseBicycle(
   'geography': 9,
   'chemistry': 10
 });
+
+function nicknameGenerator(name) {
+
+const vowelsArr = ['a','e','i','o','u'];
+
+let result = '';
+
+if (name.length < 4) {
+  return result = 'Error: Name too short';
+} else {
+  for (let i = 0; i < 3; i++) {
+    result = result + name[i];
+  }
+}
+
+
+
+if (vowelsArr.includes(name[2], 0)) {
+  result = result + name[3];
+}
+
+return result;
+}
+
+
+
+function sortMyString(S) {
+  
+  let resultEven = '';
+  let resultOdd = '';
+
+  for (let i = 0; i < S.length; i++) {
+    if ((i % 2) === 0) {
+      resultEven = resultEven + S[i];
+      console.log (resultEven); 
+    } else {
+      resultOdd = resultOdd + S[i];
+    }
+  }
+
+
+
+  return `${resultEven} ${resultOdd}`;
+}
+
+*/
+
+function isPowerOfTwo(n){
+  
+  const degreeArr = [];
+  let deg = 0;
+  let i = -1;
+
+  do {
+    i++;
+    degreeArr[i] = Math.pow(2,i);
+    if (degreeArr.includes(n, 0)){
+      return true;
+    }
+
+    
+  } while (degreeArr[i] < n);
+
+  return false;
+}
+
+
+let z = isPowerOfTwo(4097);
 
 
   console.log (z);
