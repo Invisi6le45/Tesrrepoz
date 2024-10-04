@@ -834,7 +834,7 @@ function sortMyString(S) {
 
 */
 
-function isPowerOfTwo(n){
+/* function isPowerOfTwo(n){
   
   const degreeArr = [];
   let deg = 0;
@@ -851,10 +851,46 @@ function isPowerOfTwo(n){
   } while (degreeArr[i] < n);
 
   return false;
+} */
+
+
+function sentence(arrayOfObjects) {
+  const propArr = [];
+  const textArr = [];
+  let text = '';
+
+  text = arrayOfObjects.values();
+
+  
+/*   for (let i = 0; i < arrayOfObjects.length; i++) {
+    for (let id in arrayOfObjects[i]) {
+      textArr[id] = arrayOfObjects[i][id];
+    }
+  }
+
+
+
+  
+ 
+  for (let i = 0; i < textArr.length; i++) {
+    if (textArr[i] !== undefined) {
+      text = text + textArr[i] + ' ';
+    }
+  } */
+
+  /* text = text.slice(0, -1); */
+  return text
 }
 
 
-let z = isPowerOfTwo(4097);
+
+let z = sentence ([
+  {'3': 'Jake.'},
+  {'5': 'Chinatown'}, 
+  {'1': 'Forget'},
+  {'4': 'It is'}, 
+  {'2': 'it'}]
+);
 
 
   console.log (z);
