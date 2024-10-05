@@ -1017,7 +1017,7 @@ function strCount(obj){
     counterArr(obj);
   }
 } */
-
+/* 
 
 var Alphabet = {
   BINARY:        '01',
@@ -1050,9 +1050,11 @@ function convert(input, source, target) {
       counter=Math.floor(counter/targLen);
     }
   return result ? result : target[0];
-}
+} */
 
 
+
+  
   
 
 let z = convert ("1010", Alphabet.BINARY, Alphabet.DECIMAL);
