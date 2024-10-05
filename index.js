@@ -851,7 +851,7 @@ function sortMyString(S) {
   } while (degreeArr[i] < n);
 
   return false;
-} */
+} 
 
 
 function sentence(arrayOfObjects) {
@@ -859,39 +859,203 @@ function sentence(arrayOfObjects) {
   const textArr = [];
   let text = '';
 
-  text = arrayOfObjects.values();
+  let varMin = 0;
 
-  
-/*   for (let i = 0; i < arrayOfObjects.length; i++) {
+  for (let i = 0; i < arrayOfObjects.length; i++) {
     for (let id in arrayOfObjects[i]) {
-      textArr[id] = arrayOfObjects[i][id];
+      propArr[i] = Number(id);
     }
   }
 
 
+  varMin = Math.min(...propArr);
 
-  
- 
+  for (let i = 0; i < arrayOfObjects.length; i++) {
+    for (let id in arrayOfObjects[i]) {
+      textArr[Number(id) + (varMin * (-1))] = arrayOfObjects[i][id];
+    }
+  }
+
+
   for (let i = 0; i < textArr.length; i++) {
     if (textArr[i] !== undefined) {
       text = text + textArr[i] + ' ';
-    }
-  } */
+    } 
+  } 
 
-  /* text = text.slice(0, -1); */
+  text = text.slice(0, -1);
   return text
 }
 
 
 
-let z = sentence ([
-  {'3': 'Jake.'},
-  {'5': 'Chinatown'}, 
-  {'1': 'Forget'},
-  {'4': 'It is'}, 
-  {'2': 'it'}]
-);
 
 
-  console.log (z);
+ function minSum(arr) {
+  let result = 0;
+  const arrCopy =  arr.map((element) => element);
+
+  arrCopy.sort(function(a, b) { return a - b; });
+
+  console.log (arrCopy);
+
+  for (let i = 0; i < arrCopy.length/2; i++) {
+    result = result + arrCopy[i]*arrCopy[arrCopy.length - 1-i];
+    console.log (`${arrCopy[i]}  *  ${arrCopy[arrCopy.length - 1-i]}`);
+  };
+  return result
+} 
+
+  function vowelOne(s){
+    const vowelsArr = ['a','e','i','o','u','A','E','I','O','U'];
+
+    let result = '';
+
+    for (let i = 0; i < s.length; i++) {
+      if (vowelsArr.includes(s[i])) {
+        result = result + '1';
+      } else {
+        result = result + '0';
+      }
+    }
+
+
+
+    return result
+  }
+
+
+function killer(suspectInfo, dead) {
+  
+  const evidence = Object.values(suspectInfo);
+  const suspects = [];
+
+
+  for ( let id in suspectInfo) {
+    suspects.push(id);
+  }
+
+  const counter = [];
+  let counterText = ''; 
+
+  for (let i = 0; i < evidence.length; i++){
+    console.log(`Подозреваемый: ${suspects[i]}`);
+    console.log(`Подозреваемый мог видеть: ${evidence[i]}`);
+
+    for (let j = 0; j < dead.length; j++) {
+
+      counterText = dead[j];
+
+      console.log(`Подозреваемый видел убитого ${counterText}: `);
+
+      if (evidence[i].includes(counterText)) {
+        console.log(`Да`);
+        counter.push('да');
+      } else (console.log(`Нет`));
+    }
+
+    if (counter.length === dead.length) {
+      
+      return suspects[i];
+    }
+
+    counter.length = 0;
+
+    console.log('');
+  }
+} 
+
+
+  function killer(suspectInfo, dead) {
+  
+    const evidence = Object.values(suspectInfo);
+    const suspects = [];
+  
+    for ( let id in suspectInfo) {
+      suspects.push(id);
+    }
+  
+    const counter = [];
+    let counterText = ''; 
+  
+    for (let i = 0; i < evidence.length; i++){
+      for (let j = 0; j < dead.length; j++) {
+        counterText = dead[j];
+        if (evidence[i].includes(counterText)) {
+          console.log(`Да`);
+          counter.push('да');
+        } else (console.log(`Нет`));
+      }
+      if (counter.length === dead.length) {
+        return suspects[i];
+      }
+      counter.length = 0;
+    }
+  }
+
+function strCount(obj){
+  let counter = 0;
+  
+  function counterArr(arr){
+    for (let id in arr) {
+
+      if ((typeof(arr[id]) === 'string') || (typeof(arr[id]) === 'null')){
+
+      counter++;
+
+      console.log (`Переменная:${typeof(arr[id])} тип переменной ${typeof(arr[id])}`);
+
+    } else if ((typeof(arr[id]) === 'object')){
+        let arrrVar = arr[id];
+        counterArr(arrrVar);
+      }  
+    }
+    return counter;
+  }
+
+  if (typeof(obj) === 'object') {
+    counterArr(obj);
+  }
+} */
+
+
+var Alphabet = {
+  BINARY:        '01',
+  OCTAL:         '01234567',
+  DECIMAL:       '0123456789',
+  HEXA_DECIMAL:  '0123456789abcdef',
+  ALPHA_LOWER:   'abcdefghijklmnopqrstuvwxyz',
+  ALPHA_UPPER:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA:         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+};  
+
+
+function convert(input, source, target) {
+
+  let sourLen = source.length;
+
+  let targLen = target.length;
+
+  let counter = 0;
+
+  let result = '';
+  
+  for (let d= 0; d < input.length; d++) {
+      counter *= sourLen;
+      counter += source.indexOf(input[d]);
+    }
+  while (counter != 0) {
+      result = target[counter % targLen] + result;
+      counter=Math.floor(counter/targLen);
+    }
+  return result ? result : target[0];
+}
+
+
+  
+
+let z = convert ("1010", Alphabet.BINARY, Alphabet.DECIMAL);
+
+console.log (`Полученно число ${z}`);
 
