@@ -1050,14 +1050,107 @@ function convert(input, source, target) {
       counter=Math.floor(counter/targLen);
     }
   return result ? result : target[0];
+} 
+
+  function extractNameFromTemplate(value) {
+    return value.slice(7, -1);
+  }
+
+
+  function getStringFromTemplate(firstName, lastName) {
+    return (`Hello, ${firstName} ${lastName}!`);
+  }
+  
+
+  function getStringLength(value) {
+    return value.length;
+  }*/
+  
+
+/* function concatenateStrings(value1, value2) {
+  return (value1 + value2);
 } */
 
+/* 
+  var countBits = function(n) {
+    const nBinar = n.toString(2);
+    let result = 0;
+    for (let i = 0; i <= nBinar.length; i++){
+      if (nBinar[i] === '1') {
+        result++;
+        console.log (nBinar[i]);
+      }
+    }
+    return result;
+  }; 
 
+
+
+
+  var whatTimeIsIt = function(angle) {
+    let hour = Math.floor(angle / 30);
+    let min = Math.floor(angle % 30 * 2);
+    result = '';
+    
+    let hourStr = (hour === 0) ? 12 :
+    (hour < 10) ? `0${hour}` :
+    String(hour);
+    
+    console.log(`Минуты ${min}`);
+    
+    let minStr = (min < 10) ? `0${min}` : String(min); 
+    
+    
+    console.log (`Время ${hourStr}:${minStr}`);
+  return result = `${hourStr}:${minStr}`;
+  }*/
+
+function isPrime(num) {
+  let absNum = num;
+  let result = true;
+
+  console.log (num);
 
   
-  
+  if (num === 0) {
+    return false;
+  } else {
+    console.log ('не 0')
+  }
 
-let z = convert ("1010", Alphabet.BINARY, Alphabet.DECIMAL);
+  absNum = (num < 0) ? (num * (-1)) : num;
 
-console.log (`Полученно число ${z}`);
+  console.log (`Приведённое num = ${absNum}`);
+
+
+  let testDes = 0;
+
+  if ((absNum === 1) || (absNum === 2)) {
+
+    return result = true;
+
+  } else {
+
+    for (let i = 2; i <= absNum; i++) {
+
+
+      console.log (` ${absNum}/${i}`);
+
+
+      testDes = absNum % i;
+
+      console.log (`Оcтаток = ${testDes}`);
+      if (testDes === 0) {
+        return result = false;
+      }
+    }
+  }
+
+  return result = true;
+}
+
+
+let z = isPrime (32452133);
+
+console.log (`Число простое: "${z}"`);
 
